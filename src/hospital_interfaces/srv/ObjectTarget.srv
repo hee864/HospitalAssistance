@@ -1,0 +1,8 @@
+# Request
+---
+
+# Response
+bool success
+string object
+string target
+string commands

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>실시간 영상 스트리밍 및 객체 리스트</title>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+
+        function readMetadata(filename) {
+            console.log("📤 Emit metadata filename:", filename);
+            socket.emit("say_metadata", { filename: filename });
+        }
+
+        socket.on("spoken_text", (data) => {
+            alert("로봇이 말한 내용: " + data.text);
+        });
+    </script>
+    <script>
+        socket.on("keyword_text", function (data) {
+            console.log("🔔 감지된 명령 도착:", data);
+            const el = document.getElementById("live-command");
+            if (el) {
+                el.innerText =
+                `Object: ${data.object}, Target: ${data.target}, Command: ${data.commands}`;
+            } else {
+            console.warn(":x: live-command 요소가 존재하지 않음");
+            }
+
+        });
+    </script>
+
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; }
+        #video-container { margin-right: 20px; }
+        #object-list { width: 200px; background: #f0f0f0; padding: 10px; border-radius: 8px; }
+        .object-item { padding: 8px; margin-bottom: 6px; background: white; border-radius: 4px; cursor: pointer; }
+        .object-item:hover { background: #d0f0ff; }
+        .highlight { background: #a0d8ff !important; }
+        .dicom-card {
+            margin-top: 20px;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 2px 2px 10px #ddd;
+            }
+            .dicom-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            }
+            .dicom-meta p {
+            margin: 4px 0;
+            font-size: 14px;
+            color: #444;
+            }
+
+    </style>
+</head>
+<body>
+    <div style="display: flex; padding: 20px;">
+        <!-- 왼쪽: 영상 스트리밍 -->
+        <div id="video-container" style="flex: 1;">
+            <h2>실시간 영상 스트리밍</h2>
+            <img id="video-stream" width="800" height="600" />
+        </div>
+
+        <!-- 오른쪽: DICOM 카드 -->
+        <div style="width: 400px; margin-left: 30px;">
+            {% for image in images %}
+            <div class="dicom-card">
+                <img src="{{ url_for('serve_image', filename=image.image) }}" alt="dicom preview" />
+                <!-- <img src="/static/converted/example.png" alt="dicom preview" /> -->
+                <div class="dicom-meta">
+                    <h3>{{ image.PatientName }}</h3>
+                    <p>성별: {{ image.PatientSex }}</p>
+                    <p>나이: {{ image.PatientAge }}</p>
+                    <p>환자 ID: {{ image.PatientID }}</p>
+                    <p>종: {{ image.PatientSpeciesDescription }}</p>
+                    <p>품종: {{ image.PatientBreedDescription }}</p>
+                    <p>검사 목적: {{ image.SeriesDescription }}</p>
+                    <p>촬영 날짜: {{ image.StudyDate }}</p>
+                    <p>촬영 시간: {{ image.StudyTime }}</p>
+                </div>
+                <button onclick="readMetadata('{{ image.filename }}')">📷 환자 정보 읽기</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- 아래쪽: 객체 리스트 -->
+    <div id="object-list" style="padding: 20px; background: #f0f0f0;">
+        <h3>탐지 객체 목록</h3>
+        <div id="objects" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+    </div>
+        
+    <div style="margin-top: 20px;">
+        <h3>🗣️ 사용자 명령어 (실시간)</h3>
+        <p id="live-command" style="font-size: 18px; font-weight: bold; color: #333;"></p>
+    </div>
+
+    <style>
+    #objectsDiv {
+        display: flex;
+        flex-direction: column; /* 세로 정렬 */
+        gap: 10px; /* 항목 간 간격 */
+    }
+
+    .object-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+
+    .object-item:hover {
+        background-color: #e0e0e0;
+    }
+    </style>
+
+
+
+    <script>
+        
+        const img = document.getElementById('video-stream');
+        const objectsDiv = document.getElementById('objects');
+        let selectedObjectId = null;
+        let lastClickTime = 0;
+
+        // 영상 수신 처리
+        socket.on('binary_frame', (data) => {
+            try {
+                img.src = `data:image/jpeg;base64,${data.image}`;
+            } catch (e) {
+                console.error('이미지 처리 오류:', e);
+            }
+        });
+
+        // 객체 선택 핸들러 (강화된 버전)
+        function handleObjectSelection(obj) {
+            if (!obj || !obj.raw_id) return;
+            
+            const now = Date.now();
+            if (now - lastClickTime < 300) return;
+            lastClickTime = now;
+            
+            // 선택 상태 업데이트
+            selectedObjectId = obj.raw_id;
+            updateSelectionUI(selectedObjectId);
+            
+            // 서버에 선택 알림
+            socket.emit('pick_object', {
+                id: obj.label,
+                raw_id: obj.raw_id
+            });
+            
+            console.log(`Selected: ${obj.label} (ID: ${obj.raw_id})`);
+        }
+
+        // UI 업데이트 함수
+        function updateSelectionUI(raw_id) {
+            // 모든 하이라이트 제거
+            document.querySelectorAll('.object-item.highlight').forEach(el => {
+                el.classList.remove('highlight');
+            });
+            
+            // 새 선택 적용
+            const selectedElement = document.getElementById(`obj-${raw_id}`);
+            if (selectedElement) {
+                selectedElement.classList.add('highlight');
+                selectedElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // 서버로부터 선택 확인 응답
+        socket.on('selection_confirmed', (data) => {
+            console.log(`Server confirmed selection: ${data.raw_id}`);
+            updateSelectionUI(data.raw_id);
+        });
+
+        // 객체 리스트 업데이트
+        socket.on('detection_list', (objList) => {
+            objectsDiv.innerHTML = '';
+            objList.forEach(obj => {
+                const div = document.createElement('div');
+                div.className = 'object-item';
+                div.id = `obj-${obj.raw_id}`;
+                div.innerHTML = `
+                    <strong>${obj.label}</strong><br/>
+                    Confidence: ${obj.score}%<br/>
+                `;
+                
+                div.addEventListener('click', () => handleObjectSelection(obj));
+                objectsDiv.appendChild(div);
+            });
+            
+            // 기존 선택 상태 복원
+            if (selectedObjectId) {
+                updateSelectionUI(selectedObjectId);
+            }
+        });
+
+
+        socket.on('connect', () => {
+            console.log('웹 클라이언트 연결됨');
+        });
+        window.onload = function () {
+      fetch("/say_text", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({text: "info/info"})
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.popup) {
+          alert("환자 정보를 보시려면 사진을 클릭해주세요!");
+          document.querySelectorAll(".metadata-btn").forEach(btn => btn.disabled = false);
+        }
+      });
+    };
+
+    </script>
+</body>
+</html>

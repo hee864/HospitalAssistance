@@ -1,0 +1,5 @@
+src 안에 넣으면 됨.
+수정한것) 
+tracking_detection 에 /general_result 토픽 발행 추가(yolo.py로 객체탐지결과)
+detection_manager 에 self.create_subscription(Detection2DArray, '/general_result', self.detection_callback, 10) 로 토픽 바꿈
+
