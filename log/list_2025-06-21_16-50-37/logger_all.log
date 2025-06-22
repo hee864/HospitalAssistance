@@ -1,0 +1,158 @@
+[0.651s] colcon DEBUG Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/heewoo/HospitalAssistance']
+[0.652s] colcon DEBUG Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/heewoo/HospitalAssistance'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x772c673a3520>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x772c673a2380>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x772c673a2380>>, mixin_verb=('list',))
+[1.893s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) check parameters
+[1.893s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) check parameters
+[1.893s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) check parameters
+[1.893s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) check parameters
+[1.893s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) discover
+[1.894s] colcon.colcon_core.package_discovery INFO Crawling recursively for packages in '/home/heewoo/HospitalAssistance'
+[1.894s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extensions ['ignore', 'ignore_ament_install']
+[1.894s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'ignore'
+[1.895s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'ignore_ament_install'
+[1.896s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extensions ['colcon_pkg']
+[1.896s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'colcon_pkg'
+[1.896s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extensions ['colcon_meta']
+[1.896s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'colcon_meta'
+[1.897s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extensions ['ros']
+[1.897s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'ros'
+[1.956s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extensions ['cmake', 'python']
+[1.957s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'cmake'
+[1.957s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'python'
+[1.957s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extensions ['python_setup_py']
+[1.957s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance) by extension 'python_setup_py'
+[1.958s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extensions ['ignore', 'ignore_ament_install']
+[1.958s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'ignore'
+[1.958s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'ignore_ament_install'
+[1.959s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extensions ['colcon_pkg']
+[1.959s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'colcon_pkg'
+[1.959s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extensions ['colcon_meta']
+[1.959s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'colcon_meta'
+[1.959s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extensions ['ros']
+[1.959s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'ros'
+[1.960s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extensions ['cmake', 'python']
+[1.960s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'cmake'
+[1.960s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'python'
+[1.960s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extensions ['python_setup_py']
+[1.960s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital) by extension 'python_setup_py'
+[1.961s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[1.961s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'ignore'
+[1.961s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'ignore_ament_install'
+[1.961s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extensions ['colcon_pkg']
+[1.962s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'colcon_pkg'
+[1.962s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extensions ['colcon_meta']
+[1.962s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'colcon_meta'
+[1.962s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extensions ['ros']
+[1.962s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'ros'
+[1.963s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extensions ['cmake', 'python']
+[1.963s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'cmake'
+[1.963s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'python'
+[1.963s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extensions ['python_setup_py']
+[1.963s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/__pycache__) by extension 'python_setup_py'
+[1.965s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extensions ['ignore', 'ignore_ament_install']
+[1.966s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'ignore'
+[1.966s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'ignore_ament_install'
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extensions ['colcon_pkg']
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'colcon_pkg'
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extensions ['colcon_meta']
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'colcon_meta'
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extensions ['ros']
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'ros'
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extensions ['cmake', 'python']
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'cmake'
+[1.967s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'python'
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extensions ['python_setup_py']
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/dicom_output) by extension 'python_setup_py'
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extensions ['ignore', 'ignore_ament_install']
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'ignore'
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'ignore_ament_install'
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extensions ['colcon_pkg']
+[1.968s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'colcon_pkg'
+[1.969s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extensions ['colcon_meta']
+[1.969s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'colcon_meta'
+[1.969s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extensions ['ros']
+[1.969s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'ros'
+[1.970s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extensions ['cmake', 'python']
+[1.970s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'cmake'
+[1.970s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'python'
+[1.970s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extensions ['python_setup_py']
+[1.970s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/png_input) by extension 'python_setup_py'
+[1.971s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extensions ['ignore', 'ignore_ament_install']
+[1.971s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'ignore'
+[1.971s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'ignore_ament_install'
+[1.971s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extensions ['colcon_pkg']
+[1.972s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'colcon_pkg'
+[1.972s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extensions ['colcon_meta']
+[1.972s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'colcon_meta'
+[1.972s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extensions ['ros']
+[1.972s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'ros'
+[1.972s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extensions ['cmake', 'python']
+[1.973s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'cmake'
+[1.973s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'python'
+[1.973s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extensions ['python_setup_py']
+[1.973s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static) by extension 'python_setup_py'
+[1.973s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extensions ['ignore', 'ignore_ament_install']
+[1.974s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'ignore'
+[1.974s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'ignore_ament_install'
+[1.974s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extensions ['colcon_pkg']
+[1.974s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'colcon_pkg'
+[1.974s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extensions ['colcon_meta']
+[1.974s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'colcon_meta'
+[1.975s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extensions ['ros']
+[1.975s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'ros'
+[1.975s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extensions ['cmake', 'python']
+[1.975s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'cmake'
+[1.975s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'python'
+[1.976s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extensions ['python_setup_py']
+[1.976s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/static/converted) by extension 'python_setup_py'
+[1.976s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extensions ['ignore', 'ignore_ament_install']
+[1.976s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'ignore'
+[1.976s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'ignore_ament_install'
+[1.977s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extensions ['colcon_pkg']
+[1.977s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'colcon_pkg'
+[1.977s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extensions ['colcon_meta']
+[1.977s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'colcon_meta'
+[1.977s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extensions ['ros']
+[1.977s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'ros'
+[1.978s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extensions ['cmake', 'python']
+[1.978s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'cmake'
+[1.978s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'python'
+[1.978s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extensions ['python_setup_py']
+[1.978s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/flask_hospital/templates) by extension 'python_setup_py'
+[1.979s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/log) by extensions ['ignore', 'ignore_ament_install']
+[1.979s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/log) by extension 'ignore'
+[1.980s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/log) ignored
+[1.981s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extensions ['ignore', 'ignore_ament_install']
+[1.981s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'ignore'
+[1.981s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'ignore_ament_install'
+[1.982s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extensions ['colcon_pkg']
+[1.982s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'colcon_pkg'
+[1.982s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extensions ['colcon_meta']
+[1.982s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'colcon_meta'
+[1.982s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extensions ['ros']
+[1.982s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'ros'
+[1.983s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extensions ['cmake', 'python']
+[1.983s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'cmake'
+[1.983s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'python'
+[1.983s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extensions ['python_setup_py']
+[1.983s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src) by extension 'python_setup_py'
+[1.983s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extensions ['ignore', 'ignore_ament_install']
+[1.984s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extension 'ignore'
+[1.984s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extension 'ignore_ament_install'
+[1.984s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extensions ['colcon_pkg']
+[1.984s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extension 'colcon_pkg'
+[1.984s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extensions ['colcon_meta']
+[1.984s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extension 'colcon_meta'
+[1.985s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extensions ['ros']
+[1.985s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital) by extension 'ros'
+[1.994s] colcon.colcon_core.package_identification DEBUG Package '/home/heewoo/HospitalAssistance/src/hospital' with type 'ros.ament_python' and name 'hospital'
+[1.994s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.995s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extension 'ignore'
+[1.995s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extension 'ignore_ament_install'
+[1.995s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extensions ['colcon_pkg']
+[1.996s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extension 'colcon_pkg'
+[1.996s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extensions ['colcon_meta']
+[1.996s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extension 'colcon_meta'
+[1.996s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extensions ['ros']
+[1.996s] colcon.colcon_core.package_identification Level 1 _identify(/home/heewoo/HospitalAssistance/src/hospital_interfaces) by extension 'ros'
+[1.999s] colcon.colcon_core.package_identification DEBUG Package '/home/heewoo/HospitalAssistance/src/hospital_interfaces' with type 'ros.ament_cmake' and name 'hospital_interfaces'
+[2.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) using defaults
