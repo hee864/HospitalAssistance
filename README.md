@@ -2,6 +2,34 @@
 
 수의사 보조 인력 부족 문제 해결을 위한 ROS2 기반 협동로봇 프로젝트
 
+> 음성 명령, 의료 도구 인식·추적, 3D 좌표 추정, 협동로봇 제어와 의료 영상 UI를 통합한 수술 보조 시스템
+
+## 프로젝트 요약
+
+| 구분 | 내용 |
+| --- | --- |
+| 로봇 | Doosan M0609, RG2 Gripper |
+| 비전 | Intel RealSense D435i, YOLOv8, DeepSORT, OpenCV |
+| 로봇 제어 | ROS2 Humble, DRL API, Modbus TCP, 좌표계 캘리브레이션 |
+| 인터페이스 | Wake Word, STT/TTS, Flask-SocketIO, DICOM Viewer |
+| 구조 | 탐지·추적·음성·로봇 제어·웹 UI를 분리한 ROS2 멀티 노드 |
+
+## 주요 구현 범위
+
+- 음성 명령에서 대상 도구와 작업을 추출해 로봇 동작으로 연결
+- YOLOv8과 RealSense depth를 이용한 수술 도구 탐지 및 3D 좌표 계산
+- DeepSORT 기반 메스 팁 추적과 좌표 변화량 기반 로봇 이동 명령 최적화
+- Camera/Gripper/Base 좌표계 캘리브레이션과 목표 pose 변환
+- Doosan M0609와 RG2 그리퍼를 이용한 도구 전달, 소독 스프레이, 석션 보조 동작 구현
+- Flask-SocketIO 기반 탐지 영상·객체 목록 전송과 DICOM 의료 영상 조회 UI 구현
+- ROS2 custom service를 이용한 detection-controller 간 요청/응답 인터페이스 설계
+
+## 핵심 성과
+
+- 9개 ROS2 노드를 역할별로 분리해 인식, 음성, 로봇 제어와 UI를 통합했습니다.
+- 2D 객체 탐지 결과를 depth와 캘리브레이션 행렬로 3D 로봇 좌표까지 연결했습니다.
+- 음성 요청부터 도구 탐지, 파지, 전달, 복귀까지 수술 보조 작업 흐름을 구현했습니다.
+
 ---
 
 ## 프로젝트 개요
@@ -704,4 +732,3 @@ pip install flask flask_socketio gtts playsound pydicom pillow langchain soundde
 본 프로젝트는 연구 및 학습 목적으로 개발되었으며, 상업적 사용을 금합니다.
 
 ---
-
